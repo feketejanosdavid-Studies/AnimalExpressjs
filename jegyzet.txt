@@ -1,0 +1,43 @@
+11.29--------------------------------------------------------------------------
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+npm i -g @angular/cli@18.2.4
+
+ng n nev --standalone=false
+
+ng add @ng-bootstrap/ng-bootstrap
+
+
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+12.02--------------------------------------------------------------------------
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+ASP .NET core web API --> C#-os API létrehozása
+
+Model mappa létrehozása, benne az adatbázismodel létrehozása, getter setterr-el
+
+Controllers mappába --> new scaffolded item --> API controller with actions, using Entity Framework
+
+nuget package manager console --> add-migration + update-database
+
+mySQL-re megírva: nuget package managerbe, egy pomelo + appsettings.json-be átírni a contextet
+
+Program.cs fájlban a connectiont átírni
+
+
+Express JS-el:
+
+md projektnév
+cd projektnév
+npm init -y
+np, i express cors
+
+index.js fájl létrehozása
+ha kész console-ban node index.js
+
+rotes, services mappa létrehozása
+routes--> animals.js
+services --> animals.js -- ugyanaz a név, így kapcsolódik össze
+	   db.js
+
+config.js fájl létrehozása +ban
+
+npm i mysql2
