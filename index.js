@@ -3,6 +3,8 @@ const app = express();
 const port = 3000;
 const animalsRouter = require("./routes/animals");
 
+app.use(express.json());
+
 app.get("/", (req,res,)=>{res.json({"message":"OK"})});
 
 app.use("/animals", animalsRouter);

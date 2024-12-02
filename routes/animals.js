@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router();
 const animals = require('../services/animals');
 
-router.get ('/', async function(req, res) {
+router.get ('/', async function(req, res, next) {
     try{
         res.json(await animals.getDatas());
     }
@@ -12,4 +12,31 @@ router.get ('/', async function(req, res) {
     // res.json({"message":"Animals router OK"});
 })
 
-module.exports= router
+router.post ('/', async function(req, res, next) {
+    try{
+        res.json(await animals.create(req.body));
+    }
+    catch(err){
+        next(err);
+    }
+})
+
+router.put ('/:id', async function(req, res, next) {
+    try{
+        res.json(await animals.update(req.params.id, req.body));
+    }
+    catch(err){
+        next(err);
+    }
+})
+
+router.delete ('/:id', async function(req, res, next) {
+    try{
+        res.json(await animals.remove(req.params.id));
+    }
+    catch(err){
+        next(err);
+    }
+})
+
+module.exports = router
