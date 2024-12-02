@@ -62,7 +62,7 @@ async function patch(id,animal) {
     updateValues.push(id);
 
     const result= await db.query(
-        `update animal set ${fields}`,
+        `update animal set ${fields} where Id = ?`,
         updateValues
     )
 
