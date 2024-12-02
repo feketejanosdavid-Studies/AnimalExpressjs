@@ -54,9 +54,29 @@ async function remove(id) {
     return  {message}
 }
 
+async function patch(id,animal) {
+    let fields = Object.keys(animal).nap(
+        (field)=>field+"=?"
+    ).join(", ");
+    let updateValues = Object.values(animal);
+    updateValues.push(id);
+
+    const result= await db.query(
+        `update animal set ${fields}`,
+        updateValues
+    )
+
+    let message = "error on patch";
+    if (result.affectedRows){
+        message = "Animal updated";
+    }
+    return  {message}
+}
+
 module.exports={
     getDatas,
     create,
     update,
-    remove
+    remove,
+    patch
 }
